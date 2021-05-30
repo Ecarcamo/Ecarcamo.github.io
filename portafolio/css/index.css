@@ -525,6 +525,26 @@ body::-webkit-scrollbar-thumb {
 }
 
 
+/*---------------------------------------------------*/
+/*---------------------FOOTER------------------------*/
+/*---------------------------------------------------*/
+
+footer {
+    background-color: var(--negro);
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer h1 {
+    font-family: var(--fuenteContenido);
+    font-size: var(--sizeContenido);
+    font-weight: var(--weightContenido);
+    color: var(--colorClaro);
+}
+
 
 
 
