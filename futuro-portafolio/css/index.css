@@ -1,0 +1,229 @@
+
+/* Variables CSS Tamaño computadora*/
+
+:root {
+    --alto-header: 40px;
+    /* Colores */
+    --color-fuente: 0;/* 0=Rojo, 25=Cafe, 120=verde, 180=Celeste, 240=Azul, 310=Rosa */
+
+    --color-primario: hsl(var(--color-fuente), 88%, 39%);
+    --color-primario-secundario: hsl(var(--color-fuente), 88%, 39%);
+    --color-primario-alternativo: hsl(var(--color-fuente), 76%, 30%);
+    --titulos-color: hsl(var(--color-fuente), 8%, 15%);
+    --contenido-color: hsl(var(--color-fuente), 8%, 45%);
+    --contenido-color-claro: hsl(var(--color-fuente), 8%, 65%);
+    --input-color: hsl(var(--color-fuente), 70%, 96%);
+    --body-color:  hsl(var(--color-fuente), 60%, 99%);
+    --contenedores-color: #fff;
+
+    /* Tipografía */
+
+    --fuente-body: 'Poppins', sans-serif;
+
+    /* Tamaños */
+    --fuente-grande: 32px;
+    --h1-fuente: 24px;
+    --h2-fuente: 20px;
+    --h3-fuente: 18px;
+    --fuente-normal: 15px;
+    --fuente-pequeña: 13px;
+    --fuente-enana: 12px;
+
+    /* Grosores */
+    --medium: 500;
+    --semi-bold: 600;
+
+    /* Márgenes  */
+
+    --mb-0-25: 4px;
+    --mb-0-5: 8px;
+    --mb-0-75: 12px;
+    --mb-1: 16px;
+    --mb-1-5: 24px;
+    --mb-2: 32px;
+    --mb-2-5: 40px;
+    --mb-3: 48px;
+
+    /* z-index */
+
+    --z-herramienta: 10;
+    --z-fixed: 100;
+    --z-modal: 1000;
+}
+
+
+@media screen and (min-width: 968px) {
+    :root {
+        --fuente-grande: 48px;
+        --h1-fuente: 36px;
+        --h2-fuente: 24px;
+        --h3-fuente: 20px;
+        --fuente-normal: 16px;
+        --fuente-pequeña: 14px;
+        --fuente-enana: 13px;
+    }
+}
+
+
+/* Base */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0 0 var(--alto-header) 0;
+    font-family: var(--fuente-body);
+    font-size: var(--fuente-normal);
+    background-color: var(--body-color);
+    color: var(--contenido-color);
+}
+
+h1,h2,h3,h4 {
+    color: var(--titulos-color);
+    font-weight: var(--semi-bold);
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Clases Reusables */
+
+.section {
+    padding: 32px 0 64px;
+}
+
+.section_titulo {
+    font-size: var(--h1-fuente);
+}
+
+.section_subtitulo {
+    display: block;
+    font-size: var(--fuente-pequeña);
+    margin-bottom: var(--mb-3);
+}
+
+.section_titulo,
+.section_subtitulo {
+    text-align: center;
+}
+
+/* Diseño */
+
+.contenedor {
+    max-width: 768px;
+    margin: 0 var(--mb-1-5);
+}
+
+.grid {
+    display: grid;
+    gap: 24px;
+}
+
+.header{
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: var(--z-fixed);
+    background-color: var(--body-color);
+}
+
+/* NAV */
+
+.nav {
+    max-width: 968px;
+    height: var(--alto-header);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav__logo,
+.nav__toggle {
+    color: var(--titulos-color);
+    font-weight: var(--medium);
+}
+
+.nav__logo:hover {
+    color: var(--color-primario);
+}
+
+.nav__toggle {
+    font-size: 17.6px;
+    cursor: pointer;
+}
+
+.nav__toggle:hover {
+    color: var(--color-primario);
+}
+
+@media screen and (max-width: 768px) {
+    .nav__menu {
+        position: fixed;
+        bottom: -100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--body-color);
+        padding: 32px 24px 64px;
+        box-shadow: 0 -1px 4px rgba(0, 0, 0, .15);
+        border-radius: 24px 24px 0 0;
+        transition: .3s;
+    }
+    
+}
+
+.nav__list {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+}
+
+.nav__ancla {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: var(--fuente-pequeña);
+    color: var(--titulos-color);
+    font-weight: var(--medium);
+}
+
+.nav__ancla:hover {
+    color: var(--color-primario);
+}
+
+.nav__icon {
+    font-size: 19.2px;
+}
+
+.nav__cerrar {
+    position: absolute;
+    right: 20.8px;
+    bottom: 8px;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--color-primario);
+}
+
+.nav__cerrar:hover {
+    color: var(--color-primario-alternativo);
+}
+
+.mostrar-menu{
+    bottom: 0;
+}
